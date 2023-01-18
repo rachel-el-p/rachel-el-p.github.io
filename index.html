@@ -132,8 +132,10 @@
     /* For tablets */
     @media (max-width: 1024px) {
       .piece {
-        width: calc(100%/2);
-        float: left;
+      display: flex;
+      flex-flow:wrap;
+      flex-wrap:wrap;
+      flex-basis: 50%;
       }
     }
 
