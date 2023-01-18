@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charSet="utf-8" />
+  <!--Import Google Icon Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap" rel="stylesheet">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Rachel Phua | Portfolio </title>
+  <meta name="description" content="Journalist" data-react-helmet="true">
+  <meta property="og:title" content="Rachel Phua" data-react-helmet="true">
+  <meta property="og:description" content="Journalist" data-react-helmet="true">
+  <meta property="og:type" content="website" data-react-helmet="true">
+  <meta name="twitter:card" content="summary" data-react-helmet="true">
+  <meta name="twitter:creator" content="rachelphua_el" data-react-helmet="true">
+  <meta name="twitter:title" content="rachelphua_el" data-react-helmet="true">
+  <meta name="twitter:description" content="Journalist" data-react-helmet="true">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+
+    .photoandintro {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+    
+    #intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Noto Serif SC', serif;
+      font-size: 21px;
+      font-style: lighter;
+      ;
+      color: rgb(79, 77, 77);
+      font-variant: normal;
+      font-weight: lighter;
+      line-height: 130%;
+    }
+
+    .contact {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    
+
+    #photo {
+      margin-bottom: 2.5%;
+      width: 200px;
+      margin-top: 3.5%;
+      align-items: center;
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .icon {
+      width: 25px;
+      margin-top: 0;
+      margin-bottom: 0%;
+      margin-right: 1.7%;
+    }
+
+    .category {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 29px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: lighter;
+      color: rgb(79, 77, 77);
+      line-height: 35px;
+      text-align: center;
+      margin: auto;
+      margin-top: 2%;
+      margin-bottom: 2%;
+    }
+
+    .work-sample {
+      width: 1300px;
+      max-width: 92%;
+      margin-left: auto;
+      margin-right: auto;
+      display: grid;
+      flex-direction: row;
+      flex-wrap: wrap;
+      grid-template-columns: 33.3% 33.3% 33.3%;
+      grid-template-rows: 33.3% 33.3% 33.3%;
+    }
+
+    .piece {
+      display: flex;
+      flex-flow:wrap;
+      justify-content:space-evenly;
+      flex-wrap:wrap;
+      padding-right: 2.75%;
+      padding-left: 2.75%;
+      padding-bottom: 2%;
+      grid-column-start: 1;
+      grid-column-end: span 3;
+    }
+
+    /* For tablets */
+    @media (max-width: 1024px) {
+      .piece {
+        width: calc(100%/2);
+        float: left;
+      }
+    }
+
+    .piece-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      font-weight: 400;
+      line-height: 115%;
+      color: rgb(79, 77, 77);
+      margin-top: 2.25%;
+      margin-bottom: 0;
+    }
+
+    .piece-desc {
+      font-family: 'Cormorant Garamond', serif;
+      color: rgb(79, 77, 77);
+      font-size: 15px;
+      font-weight: 300;
+      margin-top: 1.2%;
+      line-height: 120%;
+      margin-bottom: 4px;
+    }
+
+    .tool {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      font-weight: 400;
+      color: white;
+      border-radius: 8px;
+      padding: 1.75px;
+      padding-left: 5.2px;
+      padding-right: 5.2px;
+      margin-right: 0.7%;
+      line-height: 100%;
+      vertical-align: middle;
+    }
+
+    /* For mobile */
+    @media (max-width: 576px) {
+      #intro {
+        font-size: 22px;
+      }
+
+      #photo {
+        width: 170px;
+        padding-top: 5%;
+      }
+
+      .work-sample {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+
+      .piece {
+        width: 100%;
+        padding-bottom: 40px;
+      }
+
+      .piece-desc {
+        margin-bottom: 7px;
+      }
+    }
+
+    .pandas {
+      background-color: #bc9cb8;
+      color: black
+    }
+
+    .web-scraping {
+      background-color: rgb(210, 210, 192);
+      color: black
+    }
+
+    .video-producing {
+      background-color: rgb(191, 210, 220);
+      color: black
+    }
+
+    .datawrapper {
+      background-color: rgb(195, 225, 215);
+      color: black
+    }
+
+    .videofronted {
+      background-color: rgb(203, 202, 220);
+      color: black
+    }
+
+    .videoscripted {
+      background-color: rgb(232, 218, 222);
+      color: black
+    }
+
+    .videoproduced {
+      background-color: rgb(226, 218, 232);
+      color: black
+    }
+
+
+    .videofilmed {
+      background-color: rgb(229, 232, 218);
+      color: black
+    }
+
+    .videoedited {
+      background-color: rgb(238, 216, 188);
+      color: black
+    }
+
+    .hvr-grow {
+      -webkit-transform: perspective(1px) translateZ(0);
+      transform: perspective(1px) translateZ(0);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: transform;
+      transition-property: transform;
+    }
+
+    .hvr-grow:hover,
+    .hvr-grow:focus,
+    .hvr-grow:active {
+      -webkit-transform: scale(1.02);
+      transform: scale(1.02);
+    }
+
+    .piece-desc:hover,
+    .piece-title:hover {
+      color: rgb(141, 139, 139);
+    }
+
+    .shadow {
+      /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+      box-shadow: 0 1.5px 5px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .img-fluid {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+    a {
+      color: rgb(7, 7, 7);
+      background-color: transparent;
+    }
+
+    a:hover {
+      color: rgb(9, 8, 8);
+      background-color: transparent;
+      text-decoration: underline;
+      font-size: 25px;
+    }
+
+    .piece-title a {
+      text-decoration: none;
+    }
+
+    .piece-title a:hover {
+      text-decoration: underline;
+      font-size: 25px;
+    }
+  </style>
+</head>
+
+<body style="background-color:#f5edf4">
+  <div class="container">
+    <div class="row">
+      <div class="photoandintro">
+        <!--Headshot-->
+        <div id="photo" class="img-fluid">
+          <img src="rp_icon.png" style="max-height:100%; max-width:100%">
+        </div>
+
+        <!--Text introduction-->
+        <div id="intro">
+          <h3>Hi, I'm Rachel Phua (潘恩琳)!</h3>
+          <p>I'm a journalist interested in business and labor reporting. I'm currently a data journalism masters
+            student at the Columbia Journalism School👩🏻‍💻.</p>
+          <p>Previously, I was a broadcast and digital reporter in Singapore, and covered the labor, tech, and real
+            estate beats 📝. My stories have been published in <a
+              href="https://www.thenation.com/article/economy/supply-chain-workers-labor/">The Nation</a>, <a
+              href="https://prospect.org/topics/rachel-phua/">The American Prospect</a>, <a
+              href="https://asia.nikkei.com/Spotlight/DealStreetAsia/Singapore-based-firms-turn-to-remote-hiring-amid-tech-talent-crunch">Nikkei
+              Asia</a>, <a
+              href="https://www.cnbc.com/2022/06/23/southeast-asia-start-ups-lay-off-workers-amid-economic-uncertainty.html">CNBC</a>,
+            <a href="https://muckrack.com/rachel-phua/articles">and more</a>. </p>
+          <p>I also love writing about food 🥡, and have produced stories for the likes of the <a
+              href="https://www.bbc.com/travel/article/20220525-peranakan-food-a-600-year-old-fusion-cuisine">BBC</a>,
+            <a href="https://edition.cnn.com/travel/article/peranakan-nyonya-food-intl-hnk/index.html">CNN</a>, <a
+              href="https://www.atlasobscura.com/articles/singapore-coffee-kopi">Atlas Obscura</a>, and <a
+              href="https://www.youtube.com/watch?v=sjckd1akYaM">SCMP's Goldthread</a>.</p>
+        </div>
+      </div>
+
+        <!--Add social media icons-->
+        <div class="contact" style="margin: auto; width: 600px; max-width: 90%; padding: 10px;"><a
+            href="mailto:rachel.el.phua@gmail.com">E-mail </a>&nbsp | &nbsp<a href="www.linkedin.com/in/rachel-el-p"
+            target="_blank" rel="noreferrer"> LinkedIn </a>&nbsp | &nbsp<a href="https://twitter.com/rachelphua_el" target="_blank"
+            rel="noreferrer"> Twitter </a>&nbsp | &nbsp<a href="https://github.com/rachel-el-p" target="_blank" rel="noreferrer">
+            GitHub </a>&nbsp | &nbsp<a href="https://github.com/rachel-el-p/resume/blob/main/RachelPhuaResume.pdf" target="_blank"
+            rel="noreferrer"> Resume </a>&nbsp </div>
+      
+    </div>
+  </div>
+  </div>
+
+  <!--Work samples-->
+  <div class="category">
+    <p>News Stories</p>
+  </div>
+
+  <!--Story 1 -->
+  <div class="work-sample">
+    <div class="piece">
+      <div>
+        <a href="https://www.thenation.com/article/economy/supply-chain-workers-labor/" target="_blank"><img
+            src="trucks-getty.jpg" style="max-height:100%; max-width:100%; margin-bottom: 0;" class="hvr-grow shadow">
+          <p class="piece-title">Supply-Chain Workers Have the Power—and They're Ready to Use It
+        </a></p>
+        <p class="piece-desc">
+        <p>The Nation</p><em>Rail, port, and parcel delivery workers are fighting for better contracts, and this time
+          they have leverage.</em></p>
+      </div></a>
+    </div>
+
+    <!--Story 2-->
+    <div class="piece">
+      <div>
+        <a class="title-hyperlink" href="https://rachel-el-p.github.io/Workplace-deaths-final-project/"
+          target="_blank"><img src="rachel-el-p.github.gif" style="max-height:100%; max-width:100%; margin-bottom: 0;"
+            class="hvr-grow shadow">
+          <p class="piece-title">How and Where Did People Die On The Job in the U.S.?
+        </a></p>
+        <p class="piece-desc">
+        <p>Columbia Journalism School project</p><em>I scraped and analyzed workplace death cases recorded by the
+          Department of Labor's Occupational Safety and Health Administration (OSHA), charting them by year, state, how
+          they died, and union status.</em></p>
+        <span class="tool pandas">Pandas</span>
+        <span class="tool datawrapper">Datawrapper</span>
+        <span class="tool web-scraping">Web scraping</span>
+      </div></a>
+    </div>
+
+    <!--Story 3-->
+    <div class="piece">
+      <div>
+        <a href="https://prospect.org/labor/amazon-workers-are-fighting-back/" target="_blank"><img
+            src="Phua-Amazon 101722.jpeg" style="max-height:100%; max-width:100%; margin-bottom: 0;"
+            class="hvr-grow shadow">
+          <p class="piece-title">Amazon Workers Are Fighting Back
+        </a></p>
+        <p class="piece-desc">
+        <p>The American Prospect</p><em>Ahead of a key vote at a warehouse in Albany, union drives and walkouts show
+          that workers are unafraid of challenging the e-commerce giant.</em></p>
+      </div></a>
+    </div>
+
+    <!--Story 4-->
+    <div class="piece">
+      <div>
+        <a href="https://prospect.org/labor/companies-required-to-report-their-union-busting-many-dont/"
+          target="_blank"><img src="Phua-Union busting 090522.jpg"
+            style="max-height:100%; max-width:100%; margin-bottom: 0;" class="hvr-grow shadow">
+          <p class="piece-title">Companies Are Required to Report Their Union Busting, but Many Don't
+        </a></p>
+        <p class="piece-desc">
+        <p>The American Prospect</p><em>Legally required documentation is often withheld until the threat of worker
+          power has been quelled.</em></p>
+      </div></a>
+    </div>
+
+    <!--Story 5-->
+    <div class="piece">
+      <div>
+        <a href="https://prospect.org/labor/gig-workers-bearing-the-brunt-of-the-global-economic-crisis/"
+          target="_blank"><img src="uber eats 07222022.jpeg" style="max-height:100%; max-width:100%; margin-bottom: 0;"
+            class="hvr-grow shadow">
+          <p class="piece-title">How Gig Workers Are Bearing the Brunt of the Global Economic Crisis
+        </a></p>
+        <p class="piece-desc">
+        <p>The American Prospect</p><em>Higher prices, an imminent economic downturn, and the stock market turmoil have
+          turned working conditions from bad to worse for on-demand workers.</em></p>
+      </div></a>
+    </div>
+
+    <!--Story 6-->
+    <div class="piece">
+      <div>
+        <a href="https://capitalandmain.com/firings-evictions-broken-promises-how-yellowstone-tour-guides-are-building-momentum-for-change"
+          target="_blank"><img src="GettyImages-173729007.jpg"
+            style="max-height:100%; max-width:100%; margin-bottom: 0;" class="hvr-grow shadow">
+          <p class="piece-title">Firings, Evictions, Broken Promises: How Yellowstone Tour Guides Are Building Momentum
+            for Change
+        </a></p>
+        <p class="piece-desc">
+        <p>Capital & Main</p><em>A giant federal contractor’s failure to abide by a settlement is building pressure for
+          Biden to take action.</em></p>
+      </div></a>
+    </div>
+
+    <!--Story 7-->
+    <div class="piece">
+      <div>
+        <a href="https://www.cnbc.com/2022/06/23/southeast-asia-start-ups-lay-off-workers-amid-economic-uncertainty.html"
+          target="_blank"><img src="CNBC layoffs.jpg" style="max-height:100%; max-width:100%; margin-bottom: 0;"
+            class="hvr-grow shadow">
+          <p class="piece-title">Southeast Asia’s start-ups have fired hundreds of workers, and this may be just the
+            beginning
+        </a></p>
+        <p class="piece-desc">
+        <p>CNBC</p><em>Tech investors say this is just the beginning of more job cuts in the region’s tech industry. As
+          interest rates rise and economic uncertainty looms, companies are now being forced to focus on profitability
+          instead of growing as quickly as possible.</em></p>
+      </div></a>
+    </div>
+
+
+    <!--Story 8-->
+    <div class="piece">
+      <div>
+        <a href="https://www.cnbc.com/2022/05/18/sea-q1-earnings-shopee-garena-post-strong-revenue-.html"
+          target="_blank"><img src="107062354-1652792412926-gettyimages-1355515030-dsc09206edit.webp"
+            style="max-height:100%; max-width:100%; margin-bottom: 0;" class="hvr-grow shadow">
+          <p class="piece-title"> Shares of Shopee-owner Sea surge 14% after stronger-than-expected revenue
+        </a></p>
+        <p class="piece-desc">
+        <p>CNBC</p><em>E-commerce and gaming revenue fell from the previous quarter, a sign business is slowing as
+          countries emerge from the pandemic.</em></p>
+      </div></a>
+    </div>
+
+    <!--Story 9-->
+    <div class="piece">
+      <div>
+        <a href="https://asia.nikkei.com/Spotlight/DealStreetAsia/Singapore-based-firms-turn-to-remote-hiring-amid-tech-talent-crunch"
+          target="_blank"><img src="nikkei tech crunch.jpg" style="max-height:100%; max-width:100%; margin-bottom: 0;"
+            class="hvr-grow shadow">
+          <p class="piece-title"> Singapore-based firms turn to remote hiring amid tech talent crunch
+        </a></p>
+        <p class="piece-desc">
+        <p>Nikkei Asia/DealStreetAsia</p><em>Zoom and Alibaba have opened new offices, jostling with Sea and Grab to
+          expand.</em></p>
+      </div></a>
+    </div>
+
+    <!--Story 10-->
+    <div class="piece">
+      <div>
+        <a href="https://asia.nikkei.com/Spotlight/DealStreetAsia/Singapore-alternative-meat-startup-raises-100m-in-Series-A-round"
+          target="_blank"><img src="nikkei next gen.jpg" style="max-height:100%; max-width:100%; margin-bottom: 0;"
+            class="hvr-grow shadow">
+          <p class="piece-title">Singapore alternative meat startup raises $100m in Series A round
+        </a></p>
+        <p class="piece-desc">
+        <p>Nikkei Asia/DealStreetAsia</p><em>Industry players here say while interest is growing, the lack of startups and a
+          wait-and-see approach has kept the industry nascent. Southeast Asia’s tech system is steps behind global
+          trends.</em></p>
+      </div></a>
+    </div>
+
+    <!--Story 11-->
+    <div class="piece">
+      <div>
+        <a href="https://www.dealstreetasia.com/stories/climate-tech-southeast-asia-281888" target="_blank"><img
+            src="dikaseva-8o4W9LZv6eo-unsplash-scaled.webp" style="max-height:100%; max-width:100%; margin-bottom: 0;"
+            class="hvr-grow shadow">
+          <p class="piece-title"> Climate tech deals in SE Asia still nascent with few startups, cautious investors
+        </a></p>
+        <p class="piece-desc">
+        <p>DealStreetAsia</p><em>Industry players here say while interest is growing, the lack of startups and a
+          wait-and-see approach has kept the industry nascent. Southeast Asia’s tech system is steps behind global
+          trends.</em></p>
+      </div></a>
+    </div>
+
+    <!--Story 12-->
+    <div class="piece">
+      <div>
+        <a href="https://www.channelnewsasia.com/business/covid19-strain-labour-market-retrenchments-rescinded-job-offers-766201"
+          target="_blank"><img src="CNA retrenchments.jpg" style="max-height:100%; max-width:100%; margin-bottom: 0;"
+            class="hvr-grow shadow">
+          <p class="piece-title"> Retrenchments and withdrawn job offers: Singapore's labour market shows signs of
+            COVID-19 strain
+        </a></p>
+        <p class="piece-desc">
+        <p>Channel NewsAsia</p><em>A layoff is one possible outcome of the economic fallout on the jobs market. But the
+          pandemic has resulted in other employment issues cropping up, such as furloughs, salary reductions and
+          rescinded job offers.</em></p>
+      </div></a>
+    </div>
+
+    <!--Story 13-->
+    <div class="piece">
+      <div>
+        <a href="https://www.channelnewsasia.com/business/covid19-strain-labour-market-retrenchments-rescinded-job-offers-766201"
+          target="_blank"><img src="lee-hsien-loong-in-car-ge2020.jpeg" style="max-height:100%; max-width:100%; margin-bottom: 0;"
+            class="hvr-grow shadow">
+          <p class="piece-title"> GE2020: PAP wins with 61.24% of vote; WP claims two GRCs including new Sengkang GRC
+        </a></p>
+        <p class="piece-desc">
+        <p>Channel NewsAsia</p><em>Singapore's 2020 national elections wrap story on how each of the parties performed and what candidates said.</em></p>
+      </div></a>
+    </div>
+
+     <!--Story 14-->
+     <div class="piece">
+      <div>
+        <a href="https://www.channelnewsasia.com/singapore/singapore-workplace-accidents-fatalities-injuries-cost-936921"
+          target="_blank"><img src="-rp--sumon-at-healthserve.jpeg" style="max-height:100%; max-width:100%; margin-bottom: 0;"
+            class="hvr-grow shadow">
+          <p class="piece-title"> The impact of workplace accidents: Victims struggle with debt and changed lives
+        </a></p>
+        <p class="piece-desc">
+        <p>Channel NewsAsia</p><em>As Singapore records a rising trend of workplace deaths and injuries, officials have expressed their concerns over the latest figures. Among low-wage foreign workers, many who took out loans to secure a job here, the repercussions are potentially devastating and long-lasting.</em></p>
+      </div></a>
+    </div>
+
+     <!--Story 15-->
+     <div class="piece">
+      <div>
+        <a href="https://www.channelnewsasia.com/singapore/propertyguru-legal-tussle-99co-over-copyright-infringement-999401"
+          target="_blank"><img src="property-guru-website.jpeg" style="max-height:100%; max-width:100%; margin-bottom: 0;"
+            class="hvr-grow shadow">
+          <p class="piece-title"> PropertyGuru in legal tussle with 99.co over copyright infringement
+        </a></p>
+        <p class="piece-desc">
+        <p>Channel NewsAsia</p><em>Scoop based on court documents attained on two real estate listing websites going head to head in court after PropertyGuru sued 99.co.</em></p>
+      </div></a>
+    </div>
+  </div>
+
+
+  <!--Work samples-->
+  <div class="category">
+    <p>Food Features</p>
+  </div>
+
+  <!--Story 1 -->
+  <div class="center-align">
+    <div class="work-sample">
+      <div class="piece">
+        <div>
+          <a href="https://www.bbc.com/travel/article/20220525-peranakan-food-a-600-year-old-fusion-cuisine"
+            target="_blank"><img src="p0c81zl8.webp" style="max-height:100%; max-width:100%; margin-bottom: 0;"
+              class="hvr-grow shadow">
+            <p class="piece-title">Southeast Asia's 600-year-old fusion cuisine
+          </a></p>
+          <p class="piece-desc">
+          <p>BBC Travel</p><em>Six hundred years ago, women created Peranakan cooking – a Southeast Asian cuisine with
+            multicultural roots – and have been shaping it ever since.</em></p>
+        </div></a>
+      </div>
+
+      <!--Story 2-->
+      <div class="piece">
+        <div>
+          <a href="https://www.cnn.com/travel/article/peranakan-nyonya-food-intl-hnk/index.html" target="_blank"><img
+              src="220307004244-10-peranakan-food-gallery-dupe.jpg"
+              style="max-height:100%; max-width:100%; margin-bottom: 0;" class="hvr-grow shadow">
+            <p class="piece-title">Peranakan food: A guide to one of Southeast Asia’s most popular cuisines
+          </a></p>
+          <p class="piece-desc">
+          <p>CNN Travel</p><em>Bursting with flavors and colors, it’s distinct for its mix of Chinese, Malay, Indian and
+            Eurasian ingredients and cooking methods.</em></p>
+        </div></a>
+      </div>
+
+      <!--Story 3-->
+      <div class="piece">
+        <div>
+          <a href="https://www.businesstimes.com.sg/lifestyle/hawker-food-makes-it-big-new-york" target="_blank"><img
+              src="Urban Hawkers on night of Friday, September 23, 2022. Credit_ Rachel Phua.png"
+              style="max-height:100%; max-width:100%; margin-bottom: 0;" class="hvr-grow shadow">
+            <p class="piece-title">Hawker food makes it big in New York
+          </a></p>
+          <p class="piece-desc">
+          <p>The Business Times</p><em>The Big Apple is seeing more F&B operators serving up Singapore street fare</em>
+          </p>
+        </div></a>
+      </div>
+
+      <!--Story 4-->
+      <div class="piece">
+        <div>
+          <a href="https://www.atlasobscura.com/articles/singapore-coffee-kopi/" target="_blank"><img
+              src="383caeb00b9c29bf01_A worker at Kim Guan Guan tossing the beans with the melted sugar and margarine.jpg"
+              style="max-height:100%; max-width:100%; margin-bottom: 0;" class="hvr-grow shadow">
+            <p class="piece-title">Singapore’s Last Traditional Coffee Roasters May Soon Disappear
+          </a></p>
+          <p class="piece-desc">
+          <p>Atlas Obscura</p><em>The aging masters of kopi are desperate for the next generation to take up their
+            craft.</em></p>
+        </div></a>
+      </div>
+
+
+      <!--Story 5-->
+      <div class="piece">
+        <div>
+          <a href="https://www.channelnewsasia.com/singapore/covid-19-delivery-takeaway-restaurants-circuit-breaker-762771"
+            target="_blank"><img src="swee kee cna.jpg" style="max-height:100%; max-width:100%; margin-bottom: 0;"
+              class="hvr-grow shadow">
+            <p class="piece-title">COVID-19: Delivery and takeaway models unsustainable, say restaurant owners
+          </a></p>
+          <p class="piece-desc">
+          <p>Channel NewsAsia</p><em>Food supplies, staff and rental costs will outweigh whatever they make in
+            deliveries and takeaways.</em></p>
+        </div></a>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Work samples: Videos-->
+  <div class="category" style="margin-top: 5%;">
+    <p>Videos</p>
+  </div>
+  <div class="work-sample">
+    <!--Video sample 1-->
+    <div class="piece">
+      <div>
+        <a href="https://www.youtube.com/watch?v=X7CMXOiauHk" target="_blank"><img src="retrenchments explainer.gif"
+            style="max-height:100%; max-width:100%; margin-bottom: 0;" class="hvr-grow shadow">
+          <p class="piece-title">Badly hit by COVID-19, when will Singapore's jobs market recover? An explainer
+        </a></p>
+        <p class="piece-desc">
+        <p>Channel NewsAsia</p><em>Latest job market figures showed that Singapore's unemployment rate climbed to a
+          16-year high. When will things pick up?</em></p>
+        <span class="tool videofronted">Fronted</span>
+        <span class="tool videoscripted">Scripted</span>
+        <span class="tool videoproduced">Produced</span>
+      </div>
+    </div>
+
+    <!--Video sample 2-->
+    <div class="piece">
+      <div>
+        <a href="https://www.channelnewsasia.com/singapore/covid-19-singapore-carnival-funfair-operators-uncle-ringo-529096?cid=youtube_cna_social_29012018_cna"
+          target="_blank"><img src="carnival cna.gif" style="max-height:100%; max-width:100%; margin-bottom: 0;"
+            class="hvr-grow shadow">
+          <p class="piece-title">The end of the ride? Carnival operators left in limbo as COVID-19 keeps their
+            businesses shut
+        </a></p>
+        <p class="piece-desc">
+        <p>Channel NewsAsia</p><em>Burning about S$100,000 a month and with no signs as to when they can reopen amid the
+          COVID-19 pandemic, travelling carnival operators in Singapore like Uncle Ringo are stuck in limbo.</em></p>
+        <span class="tool videoproduced">Produced</span>
+      </div>
+    </div>
+
+    <!--Video sample 3-->
+    <div class="piece">
+      <div>
+        <a href="https://www.youtube.com/watch?v=f0ozTH5t-7o&t=9s" target="_blank"><img src="autism CNA.gif"
+            style="max-height:100%; max-width:100%; margin-bottom: 0;" class="hvr-grow shadow">
+          <p class="piece-title">When your son is 40 and has autism - and you're getting on in age
+        </a></p>
+        <p class="piece-desc">
+        <p>Channel NewsAsia</p><em>Duane Goh has autism and is 40 years old. And while raising Duane has had its
+          challenges, his parents, now 74, have bigger concerns about what will happen to him after they die.</em></p>
+        <span class="tool videoproduced">Produced</span>
+      </div>
+    </div>
+
+    <!--Video sample 4-->
+    <div class="piece">
+      <div>
+        <a href="https://www.youtube.com/watch?v=sjckd1akYaM" target="_blank"><img src="popiah golddthread.gif"
+            style="max-height:100%; max-width:100%; margin-bottom: 0;" class="hvr-grow shadow">
+          <p class="piece-title">Popiah: Tasty Seafood and Veggie Salad Wrapped Inside a Springy Thin Wrap
+        </a></p>
+        <p class="piece-desc">
+        <p>SCMP's Goldthread</p><em>How do you make the world’s thinnest pancake (just 1mm thick!) and stuff it with
+          vegetables, seafood, fritters, nuts, and sauces, and then make sure it doesn’t break? This 84-year-old popiah
+          shop in Singapore shows us exactly how.</em></p>
+        <span class="tool videoscripted">Scripted</span>
+        <span class="tool videoproduced">Produced</span>
+      </div>
+    </div>
+
+    <!--Video sample 5-->
+    <div class="piece">
+      <div>
+        <a href="https://www.youtube.com/watch?v=jSAVEKrxu-4&t=14s" target="_blank"><img src="laksagoldthread.gif"
+            style="max-height:100%; max-width:100%; margin-bottom: 0;" class="hvr-grow shadow">
+          <p class="piece-title">“Put My Own Passion Inside”: Why This Couple in Singapore Love Cooking Laksa Noodles
+        </a></p>
+        <p class="piece-desc">
+        <p>SCMP's Goldthread</p><em>There are many variations to laksa, a type of spicy noodles found in Southeast Asia.
+          Which one is the best? Our bet’s on this hawker stall in Singapore — a three-time Michelin Bib Gourmand winner
+          run by an elderly couple for the past 22 years.</em></p>
+        <span class="tool videoscripted">Scripted</span>
+        <span class="tool videoproduced">Produced</span>
+      </div>
+    </div>
+
+    <!--Video sample 6-->
+    <div class="piece">
+      <div>
+        <a href="https://ezgif.com/video-to-gif/ezgif-3-246e85734e.mp4" target="_blank"><img src="taxidrivers.gif"
+            style="max-height:100%; max-width:100%; margin-bottom: 0;" class="hvr-grow shadow">
+          <p class="piece-title">“On call: Taxi Drivers' Christian Fellowship's members' simple faith drives a profound
+            impact
+        </a></p>
+        <p class="piece-desc">
+        <p>Salt&Light</p><em>The Taxi Drivers’ Christian Fellowship was started in 1989, formed so that Christian
+          drivers could find fellow brothers and sisters and be equipped to be missionaries on the road.</em>
+        </p>
+        <span class="tool videofilmed">Filmed</span>
+        <span class="tool videoedited">Edited</span>
+        <span class="tool videoscripted">Scripted</span>
+        <span class="tool videoproduced">Produced</span>
+      </div></a>
+    </div>
+  </div>
+
+  <!--Work samples: Photography-->
+  <div class="category">
+    <p>Photographs</p>
+  </div>
+
+  <div class="work-sample">
+    <!--Photographs 1-->
+    <div class="piece">
+      <div>
+        <a href="https://apnews.com/article/amazon-workers-reject-union-bid-albany-c21986e6475b057b7cc23d39d0e80d88"
+          target="_blank"><img src="amazonap.jpeg" style="max-height:100%; max-width:100%; margin-bottom: 0;"
+            class="hvr-grow shadow">
+          <p class="piece-title">Amazon workers reject union bid in upstate New York
+        </a></p>
+        <p class="piece-desc">
+        <p>Associated Press</p><em>Amazon workers and supporters march during a rally in Castleton-On-Hudson, about 15
+          miles south of Albany, N.Y., Monday, Oct. 10, 2022. The startup union that clinched a historic labor victory
+          at Amazon earlier this year is slated to face the company yet again, aiming to rack up more wins that could
+          force the reluctant retail behemoth to the negotiating table.</em></p>
+      </div>
+    </div>
+
+    <!--Photographs 2-->
+    <div class="piece">
+      <div>
+        <a href="https://saltandlight.sg/news/lessons-from-fukushima-japan-311-disaster/" target="_blank"><img
+            src="tohoku-02493.jpg" style="max-height:100%; max-width:100%; margin-bottom: 0;" class="hvr-grow shadow">
+          <p class="piece-title">Lessons From Fukushima
+        </a></p>
+        <p class="piece-desc">
+        <p>Salt&Light</p><em>An abandoned building in Tomioka Town, Fukushima. Although the evacuation notice for
+          Tomioka was lifted in April 2017, less than 10% of the population have returned.</em></p>
+      </div>
+    </div>
+
+    <!--Photographs 3-->
+    <div class="piece">
+      <div>
+        <a href="https://saltandlight.sg/news/god-told-us-to-stay-they-remained-after-the-fukushima-triple-disaster-to-help-the-afflicted/"
+          target="_blank"><img src="tohoku-02441.jpg" style="max-height:100%; max-width:100%; margin-bottom: 0;"
+            class="hvr-grow shadow">
+          <p class="piece-title">“God told us to stay”: They remained after the Fukushima triple-disaster to help the
+            afflicted
+        </a></p>
+        <p class="piece-desc">
+        <p>Salt&Light</p><em>Pastor Eiji Sumiyoshi stayed in Fukushima to support the relief efforts.</em></p>
+      </div>
+    </div>
+  </div>
+
+
+  <div>
+    <p
+      style="font-family: 'Cormorant Garamond'; font-size: 15px; color: rgb(76, 76, 76); text-align: center; margin-top: 4%; margin-bottom: 4%;">
+      © 2023 — Rachel Phua</p>
+  </div>
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
+</html>
